@@ -16,16 +16,20 @@ async function createPaymentLink(fineAmount, violatorName, violationId) {
           quantity: 1,
         },
       ],
+      metadata: {
+        violationId: `${violationId}`, // Pass the violationId as STRING to metadata
+      },
       mode: 'payment',
-      success_url: `https://yourwebsite.com/success?violationId=${violationId}`,
-      cancel_url: `https://yourwebsite.com/cancel?violationId=${violationId}`,
+      success_url: 'https://yourwebsite.com/success',
+      cancel_url: 'https://yourwebsite.com/cancel',
     });
 
     return session.url;
   } catch (error) {
-    console.error('Error creating payment link:', error.message);
-    throw error;
+    console.error('Error creating payment link:', error);
+    return null;
   }
 }
+
 
 module.exports = { createPaymentLink };

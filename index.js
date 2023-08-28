@@ -17,6 +17,11 @@ app.use(express.urlencoded({ extended: false }));
 const violationRoutes = require('./routes/violationRoutes');
 app.use('/api', violationRoutes);
 
+//webhook controller routes
+const webhookRoutes = require('./routes/webhookRoutes');
+app.use('/api', webhookRoutes);
+
+
 //error handling middleware
 app.use((err, req, res, next) => {
   console.error(err);
