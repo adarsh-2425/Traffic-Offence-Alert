@@ -5,6 +5,7 @@ const ViolationSchema = new mongoose.Schema({
   violationTime: Date,
   fineAmount: Number,
   paid: Boolean,
+  paymentLink: String
 });
 
 const Violation = mongoose.model('Violation', ViolationSchema);
