@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const ViolationSchema = new mongoose.Schema({
   violatorName: String,
+  violatorMobileNumber: Number,
   violatorVehicleNumber: String,
   violationType: String,
   violationDateTime: String,

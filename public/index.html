@@ -12,14 +12,22 @@
   <div class="container">
     <h1>Traffic Violation Form</h1>
     <form action="/api/violations" method="POST">
+      
       <div class="form-group">
         <label for="violatorName">Violator Name:</label>
         <input type="text" class="form-control" id="violatorName" name="violatorName" required>
       </div>
+
+      <div class="form-group">
+        <label for="violatorMobileNumber">Violator Mobile Number:</label>
+        <input type="tel" class="form-control" id="violatorMobileNumber" name="violatorMobileNumber" placeholder="Enter mobile number with country code" required>
+      </div>
+      
       <div class="form-group">
         <label for="vehicleNumber">Vehicle Number:</label>
         <input type="text" class="form-control" id="vehicleNumber" name="vehicleNumber" required>
       </div>
+      
       <div class="form-group">
         <label for="violationType">Violation Type:</label>
         <select class="form-control" id="violationType" name="violationType" required>
@@ -31,25 +39,27 @@
 
       
       <div class="form-group">
-  <label for="violationDate">Violation Date:</label>
-  <input type="date" class="form-control" id="violationDate" name="violationDate" required>
-</div>
-<div class="form-group">
-  <label for="violationTime">Violation Time:</label>
-  <input type="time" class="form-control" id="violationTime" name="violationTime" required>
-</div>
-
+        <label for="violationDate">Violation Date:</label>
+        <input type="date" class="form-control" id="violationDate" name="violationDate" required>
+      </div>
       
+     <div class="form-group">
+       <label for="violationTime">Violation Time:</label>
+       <input type="time" class="form-control" id="violationTime" name="violationTime" required>
+      </div>   
 
       <div class="form-group">
         <label for="violationLocation">Violation Location:</label>
         <input type="text" class="form-control" id="violationLocation" name="violationLocation" required>
       </div>
+      
       <div class="form-group">
         <label for="fineAmount">Fine Amount:</label>
         <input type="number" class="form-control" id="fineAmount" name="fineAmount" required>
       </div>
+      
       <button type="submit" class="btn btn-primary">Submit Violation</button>
+      
     </form>
   </div>
 

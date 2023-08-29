@@ -12,6 +12,7 @@ exports.createViolation = async (req, res) => {
     // Process the request body and create a new violation
     const newViolation = new Violation({
       violatorName: req.body.violatorName,
+      violatorMobileNumber: req.body.violatorMobileNumber,
       violatorVehicleNumber: req.body.violatorVehicleNumber,
       violationType: req.body.violationType,
       violationDateTime: formattedDateTime,
