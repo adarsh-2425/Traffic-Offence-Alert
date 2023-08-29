@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const Violation = require('../models/Violation');
-const { generateReceiptPDF } = require('../services/generateReceiptService');
+const { generateReceiptPDF } = require('../services/receiptGenerateService');
 
 async function handlePaymentSuccess(violationId) {
   try {
@@ -19,9 +19,7 @@ async function handlePaymentSuccess(violationId) {
     
 // Function to generate a dynamic receipt number
 function generateReceiptNumber() {
-  const timestamp = violation.violationTime.toISOString();
-  const formattedTimestamp = timestamp.replace(/[-:T.]/g, ''); // Remove separators and 'T'
-  return `VIOL-${violation.violationLocation}-${formattedTimestamp}`;
+  return `VIOL-${violation.violationLocation}-${violation.violationDateTime}`;
 }
 
     // Retrieve receipt data

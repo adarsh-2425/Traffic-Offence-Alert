@@ -3,12 +3,18 @@ const { createPaymentLink } = require('../services/paymentLinkService');
 
 exports.createViolation = async (req, res) => {
   try {
+    // Formatting date and time and combining
+    const [year, month, day] = req.body.violationDate.split('-');
+    const [hour, minute] = req.body.violationTime.split(':');
+    const formattedDateTime = `${year}${month}${day}${hour}${minute}`;
+    console.log(formattedDateTime);
+    
     // Process the request body and create a new violation
     const newViolation = new Violation({
       violatorName: req.body.violatorName,
       violatorVehicleNumber: req.body.violatorVehicleNumber,
       violationType: req.body.violationType,
-      violationTime: req.body.violationTime,
+      violationDateTime: formattedDateTime,
       violationLocation: req.body.violationLocation,
       fineAmount: req.body.fineAmount,
       paid: false,

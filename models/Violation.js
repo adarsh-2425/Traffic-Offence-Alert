@@ -4,7 +4,7 @@ const ViolationSchema = new mongoose.Schema({
   violatorName: String,
   violatorVehicleNumber: String,
   violationType: String,
-  violationTime: Date,
+  violationDateTime: String,
   violationLocation: String,
   fineAmount: Number,
   paid: Boolean,
