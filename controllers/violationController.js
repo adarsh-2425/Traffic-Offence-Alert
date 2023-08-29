@@ -1,5 +1,5 @@
 const Violation = require('../models/Violation');
-const { createPaymentLink } = require('./payment');
+const { createPaymentLink } = require('../services/paymentLinkService');
 
 exports.createViolation = async (req, res) => {
   try {

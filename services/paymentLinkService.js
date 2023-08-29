@@ -1,6 +1,6 @@
 const stripe = require('../config/stripe');
 
-async function createPaymentLink(fineAmount, violatorName, violationId) {
+async function createPaymentLink (fineAmount, violatorName, violationId) {
   try {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -31,5 +31,4 @@ async function createPaymentLink(fineAmount, violatorName, violationId) {
   }
 }
 
-
-module.exports = { createPaymentLink };
+module.exports = { createPaymentLink }
