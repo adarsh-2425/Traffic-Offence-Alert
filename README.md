@@ -45,7 +45,7 @@ The Traffic Offence Alert System is a web application that helps automate the pr
 4. SMS Confirmation and Receipt Download Link:
    ![Screenshot 4](public/screenshots/SMS2.jpg)
 
-5. Payment Receipt:
+5. Payment Receipt: 
    ![Screenshot 5](public/screenshots/receipt.PNG)
 
 
@@ -68,7 +68,7 @@ To run the Traffic Offence Alert System on your local machine, follow these step
   npm install
 
 ```
-## Usage
+### Usage
 
 1. Add an .env file and  your environment variables into it. (e.g., Stripe API keys, Twilio credentials, MongoDB connection string, etc.).
   
@@ -78,6 +78,29 @@ To run the Traffic Offence Alert System on your local machine, follow these step
     npm start
     
 3. Access the application in your browser at http://localhost:3000.
+
+## Testing the Payment Functionality
+
+To test the payment functionality of the Traffic Offence Alert System using the Stripe integration, you can use the following testing credentials provided by Stripe:
+
+- Card Number: 4242 4242 4242 4242
+- Expiry Date: Use a valid future date, such as 12/34.
+- CVC: Use any three-digit CVC (four digits for American Express cards).
+- Other Fields: Use any values you like for other form fields.
+
+Please note that these are testing credentials and will not result in actual payments being processed. They are meant for verifying that the payment process works correctly in your application.
+
+Here's how you can use these credentials in the Stripe Checkout Form:
+
+1. Fill in the card number: 4242 4242 4242 4242
+2. Enter a valid future expiry date, e.g., 12/34.
+3. Use any three-digit CVC for the CVC field.
+4. Fill in other fields with test data.
+
+Once you complete the form, the system will simulate the payment process using the provided testing credentials.
+
+Please ensure that you only use these credentials for testing purposes and do not use real credit card information.
+
 
 ## Contributing
 Contributions are welcome! If you have any ideas or improvements, feel free to open an issue or create a pull request.
