@@ -5,9 +5,11 @@ The Traffic Offence Alert System is a web application that helps automate the pr
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Screenshots](#screenshots)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Testing the Payment Functionality](#testing-the-payment-functionality)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -80,7 +82,7 @@ To run the Traffic Offence Alert System on your local machine, follow these step
     
 3. Access the application in your browser at http://localhost:3000.
 
-## Testing the Payment Functionality
+### Testing the Payment Functionality
 
 To test the payment functionality of the Traffic Offence Alert System using the Stripe integration, you can use the following testing credentials provided by Stripe:
 
