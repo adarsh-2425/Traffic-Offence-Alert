@@ -31,6 +31,24 @@ The Traffic Offence Alert System is a web application that helps automate the pr
 - Bootstrap (for frontend styling)
 - HTML, CSS, JavaScript
 
+## Screenshots
+
+1. Filling the Violation Form:
+   ![Screenshot 1](/screenshots/screenshot1.png)
+
+2. SMS Notification of Violation:
+   ![Screenshot 2](/screenshots/screenshot2.png)
+
+3. Stripe Checkout Form for Payment:
+   ![Screenshot 3](/screenshots/screenshot3.png)
+
+4. SMS Confirmation and Receipt Download Link:
+   ![Screenshot 4](/screenshots/screenshot4.png)
+
+5. Payment Receipt:
+   ![Screenshot 5](/screenshots/screenshot5.png)
+
+
 ## Getting Started
 
 To run the Traffic Offence Alert System on your local machine, follow these steps:
