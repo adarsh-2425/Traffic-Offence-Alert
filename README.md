@@ -34,7 +34,7 @@ The Traffic Offence Alert System is a web application that helps automate the pr
 ## Screenshots
 
 1. Filling the Violation Form:
-   ![Screenshot 1](/screenshots/screenshot1.png)
+   ![Screenshot 1](public/screenshots/form.png)
 
 2. SMS Notification of Violation:
    ![Screenshot 2](/screenshots/screenshot2.png)
