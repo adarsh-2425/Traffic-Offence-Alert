@@ -45,7 +45,8 @@ The Traffic Offence Alert System is a web application that helps automate the pr
 4. SMS Confirmation and Receipt Download Link:
    ![Screenshot 4](public/screenshots/SMS2.jpg)
 
-5. Payment Receipt: 
+5. Payment Receipt:
+    
    ![Screenshot 5](public/screenshots/receipt.PNG)
 
 
