@@ -1,5 +1,6 @@
 const Violation = require('../models/Violation');
 const { createPaymentLink } = require('../services/paymentLinkService');
+const { sendPaymentLinkSMS } = require('../services/communicationService');
 
 exports.createViolation = async (req, res) => {
   try {
@@ -7,7 +8,6 @@ exports.createViolation = async (req, res) => {
     const [year, month, day] = req.body.violationDate.split('-');
     const [hour, minute] = req.body.violationTime.split(':');
     const formattedDateTime = `${year}${month}${day}${hour}${minute}`;
-    console.log(formattedDateTime);
     
     // Process the request body and create a new violation
     const newViolation = new Violation({
@@ -29,8 +29,11 @@ exports.createViolation = async (req, res) => {
     newViolation.paymentLink = paymentLink;
     await newViolation.save();
 
+    // Send SMS with violation details
+    sendPaymentLinkSMS(newViolation);
+
     res.status(201).json({
-      message: 'Violation recorded and notification sent.',
+      message: 'Violation recorded and whatsapp notification sent.',
       paymentLink,
     });
   } catch (error) {

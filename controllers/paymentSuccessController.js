@@ -3,6 +3,7 @@ const path = require('path');
 
 const Violation = require('../models/Violation');
 const { generateReceiptPDF } = require('../services/receiptGenerateService');
+const { sendPaymentSuccessSMS } = require('../services/communicationService');
 
 async function handlePaymentSuccess(violationId) {
   try {
@@ -17,9 +18,9 @@ async function handlePaymentSuccess(violationId) {
     }
 
     
-// Function to generate a dynamic receipt number
-function generateReceiptNumber() {
-  return `VIOL-${violation.violationLocation}-${violation.violationDateTime}`;
+    // Function to generate a dynamic receipt number
+    function generateReceiptNumber() {
+      return       `VIOL-${violation.violationLocation}-${violation.violationDateTime}`;
 }
 
     // Retrieve receipt data
@@ -34,7 +35,11 @@ function generateReceiptNumber() {
     const pdfFilePath = path.join(__dirname, '..', 'receipts', `${violationId}.pdf`); 
     const pdf = await generateReceiptPDF(receiptData, pdfFilePath);
 
-    // PDF generated and database updated successfully
+    // Send SMS with Receipt
+    const violatorNumber = violation.violatorMobileNumber;
+    sendPaymentSuccessSMS(violatorNumber, violationId);
+
+    // Receipt generated and receipt send successfully
     return true;
   } catch (error) {
     console.error('Error handling payment success:', error);
